@@ -1,0 +1,349 @@
+#This file was generated using SimGrid-3.25.0
+#[/mnt/1tb/simgrid-v3.25/build/examples/s4u/app-masterworkers/s4u-app-masterworkers-fun /mnt/1tb/simgrid-v3.25/examples/platforms/cluster_and_one_host.xml /mnt/1tb/simgrid-v3.25/build/examples/s4u/app-masterworkers/deployment3.xml --cfg=network/model:LV08 --cfg=tracing:yes --cfg=tracing/msg/process:yes --cfg=surf/precision:500e-09 ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 L1
+6 0.000000 1 1 0 "my_cluster_1"
+0 2 1 HOST
+6 0.000000 2 2 1 "c-0.me"
+0 3 1 LINK
+6 0.000000 3 3 1 "my_cluster_1_link_0_UP"
+6 0.000000 4 3 1 "my_cluster_1_link_0_DOWN"
+6 0.000000 5 2 1 "c-1.me"
+6 0.000000 6 3 1 "my_cluster_1_link_1_UP"
+6 0.000000 7 3 1 "my_cluster_1_link_1_DOWN"
+6 0.000000 8 2 1 "c-2.me"
+6 0.000000 9 3 1 "my_cluster_1_link_2_UP"
+6 0.000000 10 3 1 "my_cluster_1_link_2_DOWN"
+6 0.000000 11 2 1 "c-3.me"
+6 0.000000 12 3 1 "my_cluster_1_link_3_UP"
+6 0.000000 13 3 1 "my_cluster_1_link_3_DOWN"
+6 0.000000 14 2 1 "c-4.me"
+6 0.000000 15 3 1 "my_cluster_1_link_4_UP"
+6 0.000000 16 3 1 "my_cluster_1_link_4_DOWN"
+6 0.000000 17 2 1 "c-5.me"
+6 0.000000 18 3 1 "my_cluster_1_link_5_UP"
+6 0.000000 19 3 1 "my_cluster_1_link_5_DOWN"
+0 4 1 ROUTER
+6 0.000000 20 4 1 "router1"
+6 0.000000 21 1 0 "AS1"
+6 0.000000 22 2 21 "host1"
+0 5 0 LINK
+6 0.000000 23 5 0 "link1"
+4 6 1 2 3 L1-HOST2-LINK3
+4 7 1 3 4 L1-LINK3-ROUTER4
+4 8 0 5 2 0-LINK5-HOST2
+4 9 0 4 5 0-ROUTER4-LINK5
+15 0.000000 6 1 topology 2 0
+16 0.000000 6 1 topology 4 0
+15 0.000000 6 1 topology 2 1
+16 0.000000 6 1 topology 3 1
+15 0.000000 6 1 topology 5 2
+16 0.000000 6 1 topology 7 2
+15 0.000000 6 1 topology 5 3
+16 0.000000 6 1 topology 6 3
+15 0.000000 6 1 topology 8 4
+16 0.000000 6 1 topology 10 4
+15 0.000000 6 1 topology 8 5
+16 0.000000 6 1 topology 9 5
+15 0.000000 6 1 topology 11 6
+16 0.000000 6 1 topology 13 6
+15 0.000000 6 1 topology 11 7
+16 0.000000 6 1 topology 12 7
+15 0.000000 6 1 topology 14 8
+16 0.000000 6 1 topology 16 8
+15 0.000000 6 1 topology 14 9
+16 0.000000 6 1 topology 15 9
+15 0.000000 6 1 topology 17 10
+16 0.000000 6 1 topology 19 10
+15 0.000000 6 1 topology 17 11
+16 0.000000 6 1 topology 18 11
+15 0.000000 7 1 topology 4 12
+16 0.000000 7 1 topology 20 12
+15 0.000000 7 1 topology 3 13
+16 0.000000 7 1 topology 20 13
+15 0.000000 7 1 topology 7 14
+16 0.000000 7 1 topology 20 14
+15 0.000000 7 1 topology 6 15
+16 0.000000 7 1 topology 20 15
+15 0.000000 7 1 topology 10 16
+16 0.000000 7 1 topology 20 16
+15 0.000000 7 1 topology 9 17
+16 0.000000 7 1 topology 20 17
+15 0.000000 7 1 topology 13 18
+16 0.000000 7 1 topology 20 18
+15 0.000000 7 1 topology 12 19
+16 0.000000 7 1 topology 20 19
+15 0.000000 7 1 topology 16 20
+16 0.000000 7 1 topology 20 20
+15 0.000000 7 1 topology 15 21
+16 0.000000 7 1 topology 20 21
+15 0.000000 7 1 topology 19 22
+16 0.000000 7 1 topology 20 22
+15 0.000000 7 1 topology 18 23
+16 0.000000 7 1 topology 20 23
+15 0.000000 8 0 topology 23 24
+16 0.000000 8 0 topology 22 24
+15 0.000000 9 0 topology 20 25
+16 0.000000 9 0 topology 23 25
+0 10 2 ACTOR
+6 0.000000 24 10 2 "master-1"
+2 11 10 ACTOR_STATE
+5 12 11 suspend "1 0 1"
+5 13 11 sleep "1 1 0"
+5 14 11 receive "1 0 0"
+5 15 11 send "0 0 1"
+5 16 11 execute "0 1 1"
+4 17 0 10 10 ACTOR_LINK
+4 18 0 10 10 ACTOR_TASK_LINK
+6 0.000000 25 10 2 "Worker-c-0.me-2"
+6 0.000000 26 10 5 "Worker-c-1.me-3"
+6 0.000000 27 10 8 "Worker-c-2.me-4"
+6 0.000000 28 10 11 "Worker-c-3.me-5"
+6 0.000000 29 10 14 "Worker-c-4.me-6"
+6 0.000000 30 10 17 "Worker-c-5.me-7"
+6 0.000000 31 10 22 "Worker-host1-8"
+12 0.000000 11 25 14
+12 0.000000 11 26 14
+12 0.000000 11 27 14
+12 0.000000 11 28 14
+12 0.000000 11 29 14
+12 0.000000 11 30 14
+12 0.000000 11 24 15
+12 0.000000 11 31 14
+13 0.001044 11 25
+13 0.001044 11 24
+12 0.001044 11 24 15
+12 0.001044 11 25 16
+13 0.002039 11 26
+13 0.002039 11 24
+12 0.002039 11 24 15
+12 0.002039 11 26 16
+13 0.003034 11 27
+13 0.003034 11 24
+12 0.003034 11 24 15
+12 0.003034 11 27 16
+13 0.004029 11 28
+13 0.004029 11 24
+12 0.004029 11 24 15
+12 0.004029 11 28 16
+13 0.005024 11 29
+13 0.005024 11 24
+12 0.005024 11 24 15
+12 0.005024 11 29 16
+13 0.006019 11 30
+13 0.006019 11 24
+12 0.006019 11 24 15
+12 0.006019 11 30 16
+13 0.007063 11 31
+13 0.007063 11 24
+12 0.007063 11 24 14
+12 0.007063 11 31 16
+13 6.328239 11 25
+12 6.328239 11 25 15
+13 6.329234 11 26
+12 6.329234 11 26 15
+13 6.329283 11 24
+12 6.329283 11 24 14
+13 6.329283 11 25
+12 6.329283 11 25 14
+13 6.330229 11 27
+12 6.330229 11 27 15
+13 6.330278 11 26
+12 6.330278 11 26 14
+13 6.330278 11 24
+12 6.330278 11 24 14
+13 6.331223 11 28
+12 6.331223 11 28 15
+13 6.331273 11 27
+12 6.331273 11 27 14
+13 6.331273 11 24
+12 6.331273 11 24 14
+13 6.332218 11 29
+12 6.332218 11 29 15
+13 6.332268 11 28
+12 6.332268 11 28 14
+13 6.332268 11 24
+12 6.332268 11 24 14
+13 6.333213 11 30
+12 6.333213 11 30 15
+13 6.333263 11 29
+12 6.333263 11 29 14
+13 6.333263 11 24
+12 6.333263 11 24 14
+13 6.334257 11 31
+12 6.334257 11 31 15
+13 6.334257 11 30
+12 6.334257 11 30 14
+13 6.334257 11 24
+12 6.334257 11 24 14
+13 6.335302 11 31
+12 6.335302 11 31 14
+13 6.335302 11 24
+12 6.335302 11 24 16
+13 6.569296 11 24
+12 6.569296 11 24 15
+13 6.570341 11 25
+13 6.570341 11 24
+12 6.570341 11 24 15
+12 6.570341 11 25 16
+13 6.571335 11 26
+13 6.571335 11 24
+12 6.571335 11 24 15
+12 6.571335 11 26 16
+13 6.572330 11 27
+13 6.572330 11 24
+12 6.572330 11 24 15
+12 6.572330 11 27 16
+13 6.573325 11 28
+13 6.573325 11 24
+12 6.573325 11 24 15
+12 6.573325 11 28 16
+13 6.574320 11 29
+13 6.574320 11 24
+12 6.574320 11 24 15
+12 6.574320 11 29 16
+13 6.575315 11 30
+13 6.575315 11 24
+12 6.575315 11 24 15
+12 6.575315 11 30 16
+13 6.576359 11 31
+13 6.576359 11 24
+12 6.576359 11 31 16
+7 6.576359 10 25
+7 6.576359 10 26
+7 6.576359 10 27
+7 6.576359 10 28
+7 6.576359 10 29
+7 6.576359 10 30
+7 6.576359 10 31
+7 6.576359 10 24
+7 6.576359 2 22
+7 6.576359 1 21
+7 6.576359 5 23
+7 6.576359 2 2
+7 6.576359 2 5
+7 6.576359 2 8
+7 6.576359 2 11
+7 6.576359 2 14
+7 6.576359 2 17
+7 6.576359 3 4
+7 6.576359 3 3
+7 6.576359 3 7
+7 6.576359 3 6
+7 6.576359 3 10
+7 6.576359 3 9
+7 6.576359 3 13
+7 6.576359 3 12
+7 6.576359 3 16
+7 6.576359 3 15
+7 6.576359 3 19
+7 6.576359 3 18
+7 6.576359 4 20
+7 6.576359 1 1

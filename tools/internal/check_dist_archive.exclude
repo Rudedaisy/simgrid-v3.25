@@ -1,0 +1,35 @@
+# Expected differences between git repository and tardists
+#
+# lines beginning with '#', and empty lines are ignored
+# lines beginning with '- ' are expected in archive only
+# lines beginning with '+ ' are expected in git only
+# each line is an extended regexp that should match full file names
+
+- \.gitversion
+- Makefile
+- doc/html/.*
+
++ BuildSimGrid\.sh
++ COPYRIGHT\.template
++ README\.coding
++ \.appveyor\.yml
++ \.circleci/.*
++ \.clang-format
++ \.classpath
++ \.codacy\.yml
++ \.editorconfig
++ \.gitlab-ci\.yml
++ \.project
++ \.readthedocs.yml
++ \.travis\.yml
++ sonar-project\.properties
+
++ contrib/.*
+
++ tools/appveyor-irc-notify\.py
++ tools/docker/.*
++ tools/git-hooks/.*
++ tools/internal/.*
++ tools/jenkins/.*
+
++ src/simix/simix_network\.tla

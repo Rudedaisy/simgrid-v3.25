@@ -1,0 +1,225 @@
+#This file was generated using SimGrid-3.25.0
+#[/mnt/1tb/simgrid-v3.25/build/examples/s4u/app-masterworkers/s4u-app-masterworkers-fun /mnt/1tb/simgrid-v3.25/examples/platforms/cluster_and_one_host.xml.IB /mnt/1tb/simgrid-v3.25/build/examples/s4u/app-masterworkers/deployment3.xml --cfg=network/model:IB --cfg=tracing:yes --cfg=tracing/msg/process:yes --cfg=surf/precision:2e-06 ]
+%EventDef PajeDefineContainerType 0
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineVariableType 1
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeDefineStateType 2
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEventType 3
+%       Alias string
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineLinkType 4
+%       Alias string
+%       Type string
+%       StartContainerType string
+%       EndContainerType string
+%       Name string
+%EndEventDef
+%EventDef PajeDefineEntityValue 5
+%       Alias string
+%       Type string
+%       Name string
+%       Color color
+%EndEventDef
+%EventDef PajeCreateContainer 6
+%       Time date
+%       Alias string
+%       Type string
+%       Container string
+%       Name string
+%EndEventDef
+%EventDef PajeDestroyContainer 7
+%       Time date
+%       Type string
+%       Name string
+%EndEventDef
+%EventDef PajeSetVariable 8
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeAddVariable 9
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSubVariable 10
+%       Time date
+%       Type string
+%       Container string
+%       Value double
+%EndEventDef
+%EventDef PajeSetState 11
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePushState 12
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+%EventDef PajePopState 13
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeResetState 14
+%       Time date
+%       Type string
+%       Container string
+%EndEventDef
+%EventDef PajeStartLink 15
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       StartContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeEndLink 16
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%       EndContainer string
+%       Key string
+%EndEventDef
+%EventDef PajeNewEvent 17
+%       Time date
+%       Type string
+%       Container string
+%       Value string
+%EndEventDef
+0 1 0 L1
+6 0.000000 1 1 0 "my_cluster_1"
+0 2 1 HOST
+6 0.000000 2 2 1 "c-0.me"
+0 3 1 LINK
+6 0.000000 3 3 1 "my_cluster_1_link_0_UP"
+6 0.000000 4 3 1 "my_cluster_1_link_0_DOWN"
+6 0.000000 5 2 1 "c-1.me"
+6 0.000000 6 3 1 "my_cluster_1_link_1_UP"
+6 0.000000 7 3 1 "my_cluster_1_link_1_DOWN"
+0 4 1 ROUTER
+6 0.000000 8 4 1 "router1"
+6 0.000000 9 1 0 "AS1"
+6 0.000000 10 2 9 "host1"
+0 5 0 LINK
+6 0.000000 11 5 0 "link1"
+4 6 1 2 3 L1-HOST2-LINK3
+4 7 1 3 4 L1-LINK3-ROUTER4
+4 8 0 5 2 0-LINK5-HOST2
+4 9 0 4 5 0-ROUTER4-LINK5
+15 0.000000 6 1 topology 2 0
+16 0.000000 6 1 topology 4 0
+15 0.000000 6 1 topology 2 1
+16 0.000000 6 1 topology 3 1
+15 0.000000 6 1 topology 5 2
+16 0.000000 6 1 topology 7 2
+15 0.000000 6 1 topology 5 3
+16 0.000000 6 1 topology 6 3
+15 0.000000 7 1 topology 4 4
+16 0.000000 7 1 topology 8 4
+15 0.000000 7 1 topology 3 5
+16 0.000000 7 1 topology 8 5
+15 0.000000 7 1 topology 7 6
+16 0.000000 7 1 topology 8 6
+15 0.000000 7 1 topology 6 7
+16 0.000000 7 1 topology 8 7
+15 0.000000 8 0 topology 11 8
+16 0.000000 8 0 topology 10 8
+15 0.000000 9 0 topology 8 9
+16 0.000000 9 0 topology 11 9
+0 10 2 ACTOR
+6 0.000000 12 10 2 "master-1"
+2 11 10 ACTOR_STATE
+5 12 11 suspend "1 0 1"
+5 13 11 sleep "1 1 0"
+5 14 11 receive "1 0 0"
+5 15 11 send "0 0 1"
+5 16 11 execute "0 1 1"
+4 17 0 10 10 ACTOR_LINK
+4 18 0 10 10 ACTOR_TASK_LINK
+6 0.000000 13 10 2 "Worker-c-0.me-2"
+6 0.000000 14 10 5 "Worker-c-1.me-3"
+6 0.000000 15 10 10 "Worker-host1-4"
+12 0.000000 11 13 14
+12 0.000000 11 14 14
+12 0.000000 11 12 15
+12 0.000000 11 15 14
+13 0.005326 11 13
+13 0.005326 11 12
+12 0.005326 11 12 15
+12 0.005326 11 13 16
+13 0.010556 11 14
+13 0.010556 11 12
+12 0.010556 11 12 15
+12 0.010556 11 14 16
+13 0.015882 11 15
+13 0.015882 11 12
+12 0.015882 11 12 14
+12 0.015882 11 15 16
+13 18.986909 11 13
+12 18.986909 11 13 15
+13 18.992140 11 14
+12 18.992140 11 14 15
+13 18.992235 11 12
+12 18.992235 11 12 14
+13 18.992235 11 13
+12 18.992235 11 13 14
+13 18.997465 11 15
+12 18.997465 11 15 15
+13 18.997465 11 14
+12 18.997465 11 14 14
+13 18.997465 11 12
+12 18.997465 11 12 14
+13 19.002791 11 15
+12 19.002791 11 15 14
+13 19.002791 11 12
+12 19.002791 11 12 16
+13 19.137498 11 12
+12 19.137498 11 12 15
+13 19.142824 11 13
+13 19.142824 11 12
+12 19.142824 11 12 15
+12 19.142824 11 13 16
+13 19.148055 11 14
+13 19.148055 11 12
+12 19.148055 11 12 15
+12 19.148055 11 14 16
+13 19.153380 11 15
+13 19.153380 11 12
+12 19.153380 11 15 16
+7 19.153380 10 13
+7 19.153380 10 14
+7 19.153380 10 15
+7 19.153380 10 12
+7 19.153380 2 10
+7 19.153380 1 9
+7 19.153380 5 11
+7 19.153380 2 2
+7 19.153380 2 5
+7 19.153380 3 4
+7 19.153380 3 3
+7 19.153380 3 7
+7 19.153380 3 6
+7 19.153380 4 8
+7 19.153380 1 1
