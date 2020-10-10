@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <actor host="c-0.me" function="master">
+     <argument value="28"/>       <!-- Number of tasks -->
+     <argument value="18981583630"/>  <!-- Computation size of training one batch -->
+     <argument value="60959488"/>   <!-- Communication size of VGG16 gradients -->
+     <argument value="134707451"/>   <!-- Computation size of synchronization -->
+  </actor>
+</platform>
